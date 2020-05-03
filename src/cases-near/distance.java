@@ -17,9 +17,9 @@ import java.util.*;
     public static void main(String[] args) throws InterruptedException,IOException {
 
        Person loc[] = new Person[12000000];//12 million in Ontario
-
+      for(int i=0;i<loc.length;i++)loc[i] = new Person(0,0,false);
        for(int ii=0;ii<args.length;ii++){
-           System.out.println(ii);
+          System.out.println(ii);
            int id = 0;
            double x = Double.parseDouble(args[ii++]),y = Double.parseDouble(args[ii++]),dis = Integer.parseInt(args[ii++]);
 

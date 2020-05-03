@@ -26,8 +26,8 @@
             echo "<br>";
             echo "Longitude: " . $lon;
             echo '<hr>';
-            
-            echo exec("java distance $lat $lon $radius");
+
+            echo exec("java -Xmx768 distance $lat $lon $radius");
             // sample imput: "java distance 43.77 -79.28 1"
           ?>
         </div>
