@@ -2,7 +2,7 @@
   ini_set("allow_url_fopen", 1);
   ini_set('user_agent', 'Hackathon Hack');
   $first = $_POST['address'];
-  $second = $_POST['radius'];
+  $radius = $_POST['radius'];
   $placeholder = 1;
 
   // Php trickery
@@ -18,5 +18,5 @@
   echo "Longitude: " . $lon;
   echo '<hr>';
 
-  // echo exec("./distance $placeholder $lat $lon");
+  echo exec("java distance $placeholder $lat $lon $radius");
 ?>

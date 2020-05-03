@@ -10,16 +10,16 @@ import java.util.*;
              infected = inf;
          }
  }
-	static BufferedReader br = new BufferedReader(new FileReader("Data.in"));
+	//static BufferedReader br = new BufferedReader(new FileReader("Data.in"));
 
 	static StringTokenizer st;
 
     public static void main(String[] args) throws InterruptedException,IOException {
 
        Person loc[] = new Person[12000000];//12 million in Ontario
-       String line = br.readLine();
-       while(line!=null){
-           st = new StringTokenizer(line);
+
+       for(int ii=0;ii<args.length;ii++){
+           st = new StringTokenizer(args[ii]);
            int id = Integer.parseInt(st.nextToken());
            double x = Double.parseDouble(st.nextToken()),y = Double.parseDouble(st.nextToken());
 
@@ -45,11 +45,11 @@ import java.util.*;
                     }
                }System.out.println("There are " + count + " infected people near you");
            }
-           line = br.readLine();
+
        }
     }
 
-	static String next () throws IOException,InterruptedException {
+	/*static String next () throws IOException,InterruptedException {
 		while (st == null || !st.hasMoreTokens())
 			st = new StringTokenizer(br.readLine().trim());
 		return st.nextToken();
@@ -67,5 +67,5 @@ import java.util.*;
 	}
 	static String readLine () throws IOException,InterruptedException {
 		return br.readLine().trim();
-	}
+	}    */
 }
