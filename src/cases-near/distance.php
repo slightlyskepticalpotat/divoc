@@ -14,7 +14,7 @@
   echo "<br>";
   echo "Latitude:" . $lat;
   echo "<br>";
-  echo "Longitude:" . lon;
+  echo "Longitude:" . $lon;
   echo '<hr>';
 
   echo exec("./testing $first $second $third");
