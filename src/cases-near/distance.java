@@ -39,7 +39,7 @@ import java.util.*;
                     if(d <= dis){
                         count++;
                     }
-               }System.out.println("There are " + count + " infected people near you");
+               }System.out.println("There are " + count + " infected people near you.");
 
 
        }
