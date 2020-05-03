@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  </head>
-  <body>
-  <form method="POST" action="testing.php">
-      <div><label>Address</label></div>
-      <div><input type="text" name="arg1" class="form-control" required/></div>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
       <br>
-      <div><label>Argument 2</label></div>
-      <div><input type="text" name="arg2" class="form-control" required/></div>
-      <br>
-      <div><label>Argument 3</label></div>
-      <div><input type="text" name="arg3" class="form-control" required/></div>
-      <br>
-      <input type="submit" value="Send" class="btn btn-primary"/>
-      </form>
+        <div class="container">
+            <h1>How many COVID-19 cases are there near you?</h1>
+            <hr>
+            <form method="POST" action="testing.php">
+                <div><label>Address (The more detailed the better)</label></div>
+                <div><input type="text" name="arg1" class="form-control" required/></div>
+                <br>
+                <div><label>Radius (Distance around you in km)</label></div>
+                <div><input type="text" name="arg2" class="form-control" required/></div>
+                <br>
+                <div><label>Placeholder Text</label></div>
+                <div><input type="text" name="arg3" class="form-control" required/></div>
+                <br>
+                <div class="float-right mt-2">
+                    <input type="submit" value="Send" class="btn btn-primary"/>
+                </div>
+            </form>
+        </div>
     </body>
-  </html>
+</html>
