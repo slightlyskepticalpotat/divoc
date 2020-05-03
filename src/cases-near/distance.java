@@ -1,7 +1,7 @@
 import java.io.*;
 
 import java.util.*;
- public class distance  {
+ public class Distance  {
      public static class Person{
          double a,b;boolean infected;
          Person(double a0,double b0,boolean inf){
@@ -19,11 +19,11 @@ import java.util.*;
        Person loc[] = new Person[12000000];//12 million in Ontario
 
        for(int ii=0;ii<args.length;ii++){
-           st = new StringTokenizer(args[ii]);
-           int id = Integer.parseInt(st.nextToken());
-           double x = Double.parseDouble(st.nextToken()),y = Double.parseDouble(st.nextToken());
 
-               loc[id] = new Person(x,y,false);
+           int id = 0;
+           double x = Double.parseDouble(args[++ii]),y = Double.parseDouble(args[++ii]),dis = Integer.parseInt(args[++ii]);
+
+               loc[0] = new Person(x,y,false);
 
                int count = 0;
                for(int i=0;i<loc.length;i++){
@@ -36,7 +36,7 @@ import java.util.*;
                     double a = Math.sin(deltaphi/2) * Math.sin(deltaphi/2) + Math.cos(phi1) * Math.cos(phi2) * Math.sin(deltalambda/2) * Math.sin(deltalambda/2);
                     double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
                     double d = radius * c / 1000;
-                    if(d <= 1){
+                    if(d <= dis){
                         count++;
                     }
                }System.out.println("There are " + count + " infected people near you");
