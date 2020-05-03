@@ -21,7 +21,7 @@ import java.util.*;
        for(int ii=0;ii<args.length;ii++){
            st = new StringTokenizer(args[ii]);
            int id = Integer.parseInt(st.nextToken());
-           double x = Double.parseDouble(st.nextToken()),y = Double.parseDouble(st.nextToken());
+           double x = Double.parseDouble(st.nextToken()), y = Double.parseDouble(st.nextToken());
 
            String status = st.nextToken();
            if(status.equals("INFECTED")){
