@@ -3,7 +3,8 @@
   ini_set('user_agent', 'Hackathon Hack');
   $first = $_POST['address'];
   $second = $_POST['radius'];
-  $third = "placeholder";
+  $placeholder = 1;
+
   // Php trickery
   $address = file_get_contents("https://nominatim.openstreetmap.org/search/" . rawurlencode($first) . "/?format=json&limit=1");
   $decoded = json_decode($address, true);
@@ -17,5 +18,5 @@
   echo "Longitude:" . $lon;
   echo '<hr>';
 
-  echo exec("./testing $first $second $third");
+  // echo exec("./distance $placeholder $lat $lon");
 ?>
