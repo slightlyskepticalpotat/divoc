@@ -1,7 +1,7 @@
 import java.io.*;
 
 import java.util.*;
- public class Distance  {
+ public class distance  {
      public static class Person{
          double a,b;boolean infected;
          Person(double a0,double b0,boolean inf){
@@ -19,9 +19,9 @@ import java.util.*;
        Person loc[] = new Person[12000000];//12 million in Ontario
 
        for(int ii=0;ii<args.length;ii++){
-
+           System.out.println(ii);
            int id = 0;
-           double x = Double.parseDouble(args[++ii]),y = Double.parseDouble(args[++ii]),dis = Integer.parseInt(args[++ii]);
+           double x = Double.parseDouble(args[ii++]),y = Double.parseDouble(args[ii++]),dis = Integer.parseInt(args[ii++]);
 
                loc[0] = new Person(x,y,false);
 
