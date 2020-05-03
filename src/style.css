@@ -146,3 +146,13 @@ body{
     font-weight: bold;
     text-align: center;
 }
+#link p{
+  display: none;
+  width : 200px;
+  height :200;
+  top:200px;
+  left:260px;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+}

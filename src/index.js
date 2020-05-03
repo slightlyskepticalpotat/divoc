@@ -6,14 +6,14 @@ const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
 const choiceC = document.getElementById("C");
 const counter = document.getElementById("counter");
-
+const link = document.getElementById ("link");
 const scoreDiv = document.getElementById("scoreContainer");
 
 // create our questions
 let questions = [
     {
         question : "Have you been abroad in the past 2 weeks?",
-        imgSrc : "img/html.png",
+        imgSrc : "img/planePerson.jpg",
         choiceA : "Yes",
         choiceB : "No",
         choiceC : "Not sure",
@@ -22,7 +22,7 @@ let questions = [
         three:"C"
     },{
         question : "Have you had difficulty breathing or a dry cough?",
-        imgSrc : "img/css.png",
+        imgSrc : "img/cough.jpg",
         choiceA : "Yes",
         choiceB : "No",
         choiceC : "Not sure",
@@ -30,8 +30,8 @@ let questions = [
         two : "B",
         three:"C"
     },{
-        question : "Have you experienced diarrhea?",
-        imgSrc : "img/js.png",
+        question : "Do you have nasal congestion?",
+        imgSrc : "img/nasal.jpg",
         choiceA : "Yes",
         choiceB : "No",
         choiceC : "Not sure",
@@ -39,8 +39,38 @@ let questions = [
         two : "B",
         three:"C"
     },{
-        question : "Have you experienced diarrhea?",
-        imgSrc : "img/css.png",
+        question : "Have you had a fever?",
+        imgSrc : "img/fever.jpg",
+        choiceA : "Yes",
+        choiceB : "No",
+        choiceC : "Not sure",
+        one : "A",
+        two : "B",
+        three:"C"
+    }
+    ,{
+        question : "Have you experienced severe chest pains?",
+        imgSrc : "img/chest.jpg",
+        choiceA : "Yes",
+        choiceB : "No",
+        choiceC : "Not sure",
+        one : "A",
+        two : "B",
+        three:"C"
+    }
+    ,{
+        question : "Have you experienced a lost sense of taste and smell?",
+        imgSrc : "img/smell.png",
+        choiceA : "Yes",
+        choiceB : "No",
+        choiceC : "Not sure",
+        one : "A",
+        two : "B",
+        three:"C"
+    }
+    ,{
+        question : "Are you in close contact with a person who recently travelled outside of Canada?",
+        imgSrc : "img/travel.jpg",
         choiceA : "Yes",
         choiceB : "No",
         choiceC : "Not sure",
@@ -94,7 +124,7 @@ function checkAnswer(answer){
     if (answer == questions[runningQuestion].one){
         score+=10;
     }
-    else if (answer == questions[runningQuestion].two){
+    else if (answer == questions[runningQuestion].three){
       score+=5;
     }
     answerIsCorrect();
@@ -114,7 +144,6 @@ function answerIsCorrect(){
     document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
 }
 
-
 // score render
 function scoreRender(){
     scoreDiv.style.display = "block";
@@ -130,5 +159,7 @@ function scoreRender(){
               "img/5.png";
 
     scoreDiv.innerHTML = "<img src="+ img +">";
-    scoreDiv.innerHTML += "<p>Your chance of having COVID-19 is "+ scorePerCent+"%</p>";
+    scoreDiv.innerHTML += "<p>Your chance of having COVID-19 is ~"+ scorePerCent+"%</p>";
+
+
 }
