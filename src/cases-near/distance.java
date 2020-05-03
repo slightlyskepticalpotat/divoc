@@ -21,14 +21,10 @@ import java.util.*;
        for(int ii=0;ii<args.length;ii++){
            st = new StringTokenizer(args[ii]);
            int id = Integer.parseInt(st.nextToken());
-           double x = Double.parseDouble(st.nextToken()), y = Double.parseDouble(st.nextToken());
+           double x = Double.parseDouble(st.nextToken()),y = Double.parseDouble(st.nextToken());
 
-           String status = st.nextToken();
-           if(status.equals("INFECTED")){
-               loc[id] = new Person(x,y,true);
-               System.out.println("You should not be outside!");
-           }else if(status.equals("HEALTHY")){
                loc[id] = new Person(x,y,false);
+
                int count = 0;
                for(int i=0;i<loc.length;i++){
                    if(i==id || !loc[i].infected )continue;
@@ -44,7 +40,7 @@ import java.util.*;
                         count++;
                     }
                }System.out.println("There are " + count + " infected people near you");
-           }
+
 
        }
     }
