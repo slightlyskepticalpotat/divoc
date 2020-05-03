@@ -10,7 +10,25 @@ string getstr(int i,int len) {
 long double getdis(long double a,long double b,long double c,long double d) {
     return sqrt((a-c)*(a-c)+(b-d)*(b-d));
 }
-int main() {
+long double todouble(char* a) {
+    char* ind=a;
+    int neg=0;
+    if (ind!=NULL and *ind=='-') {neg=1; ind++;}
+    long double lon=0,dec=1;
+    while (ind!=NULL and ((int)(*ind)>=48 and (int)(*ind)<58)) {
+        lon*=10; lon+=(int)(*ind)-48;
+        ind++;
+    }
+    if (ind==NULL or (*ind)!='.') return lon;
+    ind++;
+    while (ind!=NULL and (int)(*ind)>=48 and (int)(*ind)<58) {
+        dec/=10.0; lon+=(dec*(long double)((int)(*ind)-48));
+        ind++;
+    }
+    if (neg) lon*=(-1);
+    return lon;
+}
+int main(int argc,char* argv[]) {
     ifstream myfile;
     myfile.open("Data.txt");
     getline(myfile,str);
@@ -56,12 +74,13 @@ int main() {
     }
     long double x,y,k;
     int ans=0;
-    cin>>x>>y>>k;
+    x=todouble(argv[1]); y=todouble(argv[2]); k=todouble(argv[3]);
+    x*=1000; x=(int)(x); x/=1000; y*=1000; y=(int)(y); y/=1000; k*=1000; k=(int)(k); k/=1000;
     for (int i=0; i<v.size(); i++) {
         long double dis=getdis(v[i].first,v[i].second,x,y);
         if (dis*111.123<k) ans++;
     }
-    cout<<ans<<'\n';
     myfile.close();
-    return 0;
+    cout << "There are " << ans << " cases near you.\n";
+    return ans;
 }
