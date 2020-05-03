@@ -7,7 +7,9 @@
 
   $lat = $decoded[0]["lat"];
   $lon = $decoded[0]["lon"];
-  echo $lat, $lon;
+  echo $lat;
+  echo "<br>";
+  echo $lon;
   echo '<hr>';
 
   $second = $_POST['arg2'];
