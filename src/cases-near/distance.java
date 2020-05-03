@@ -15,17 +15,15 @@ import java.util.*;
 	static StringTokenizer st;
 
     public static void main(String[] args) throws InterruptedException,IOException {
-       HashMap<String,Integer>hm = new HashMap<>();int cnt = 0;
+
        Person loc[] = new Person[12000000];//12 million in Ontario
       for(int i=0;i<loc.length;i++)loc[i] = new Person(0,0,false);
        for(int ii=0;ii<args.length;ii++){
-          String name = args[ii++];
-          if(!hm.containsKey(name))hm.put(name,++cnt);
-          int id = hm.get(name);
-
+          System.out.println(ii);
+           int id = 0;
            double x = Double.parseDouble(args[ii++]),y = Double.parseDouble(args[ii++]),dis = Integer.parseInt(args[ii++]);
 
-               loc[id] = new Person(x,y,false);
+               loc[0] = new Person(x,y,false);
 
                int count = 0;
                for(int i=0;i<loc.length;i++){
