@@ -13,9 +13,9 @@
 
   echo "Address: " . $first;
   echo "<br>";
-  echo "Latitude:" . $lat;
+  echo "Latitude: " . $lat;
   echo "<br>";
-  echo "Longitude:" . $lon;
+  echo "Longitude: " . $lon;
   echo '<hr>';
 
   // echo exec("./distance $placeholder $lat $lon");
