@@ -8,7 +8,14 @@ string getstr(int i,int len) {
     return ret;
 }
 long double getdis(long double a,long double b,long double c,long double d) {
-    return sqrt((a-c)*(a-c)+(b-d)*(b-d));
+    long double R=6371e3;
+    long double phi1=a*3.14159/180;
+    long double phi2=c*3.14159/180;
+    long double dphi=(c-a)*3.14159/180;
+    long double del=(d-b)*3.14159/180;
+    long double aa=sin(dphi/2.0)*sin(dphi/2.0)+cos(phi1)*cos(phi2)*sin(del/2.0)*sin(del/2.0);
+    long double cc=2*atan2(sqrt(aa),sqrt(1-aa));
+    return R*cc;
 }
 long double todouble(char* a) {
     char* ind=a;
@@ -75,12 +82,13 @@ int main(int argc,char* argv[]) {
     long double x,y,k;
     int ans=0;
     x=todouble(argv[1]); y=todouble(argv[2]); k=todouble(argv[3]);
-    x*=1000; x=(int)(x); x/=1000; y*=1000; y=(int)(y); y/=1000; k*=1000; k=(int)(k); k/=1000;
+    //x*=1000; x=(int)(x); x/=1000; y*=1000; y=(int)(y); y/=1000; k*=1000; k=(int)(k); k/=1000;
     for (int i=0; i<v.size(); i++) {
         long double dis=getdis(v[i].first,v[i].second,x,y);
-        if (dis*111.123<k) ans++;
+        if (dis<k*1000) ans++;
     }
+    if (ans==1) cout<<"There is 1 case near you.\n";
+    else cout<<"The are "<<ans<<" cases near you."<<'\n';
     myfile.close();
-    cout << "There are " << ans << " cases near you.\n";
-    return ans;
+    return 0;
 }
