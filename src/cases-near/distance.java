@@ -1,7 +1,7 @@
 import java.io.*;
 
 import java.util.*;
- public class NewClass  {
+ public class distance  {
      public static class Person{
          double a,b;boolean infected;
          Person(double a0,double b0,boolean inf){
